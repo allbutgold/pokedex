@@ -10,7 +10,16 @@ import Searchbar from "../components/searchbar/Searchbar.js";
 import PokeCard from "../components/pokeCard/PokeCard.js";
 
 const Home = () => {
-    
+    const [pokeList, setPokeList] = useState([]);
+    useEffect(()=>{
+        fetch("https://pokeapi.co/api/v2/pokemon/")
+        .then(res => res.json())
+        .then(data => {
+            setPokeList(data.results)
+            console.log(data.results);
+            console.log("pokeList:", pokeList);
+        });
+    },[])
 
     return ( 
         <main>
@@ -18,7 +27,11 @@ const Home = () => {
             <Logo/>
             <BtnDarkMode />
             <Searchbar />
-            <PokeCard />
+            {   pokeList.length > 0 &&
+                pokeList.map(pokemon=> {
+                    return <PokeCard key={pokemon.id} pokemonUrl={pokemon.url}/>
+                })
+            }
         </main>
 
     );

@@ -1,6 +1,7 @@
-const BtnType = () => {
+const BtnType = (props) => {
+    const type = props.type;
     return ( 
-        <h1>BtnType</h1>
+        <button>{type.name}</button>
     );
 }
 

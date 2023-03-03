@@ -36,7 +36,9 @@ const Home = () => {
             <Searchbar />
             {   pokeList.length > 0 &&
                 pokeList.map(pokemon=> {
-                    return <Link to={"/Detaillist/"+[pokemon]}><PokeCard  key={pokemon.id} pokemonUrl={pokemon.url}/></Link>
+                    return  <Link to={"/Detaillist/"} state={{ pokemons: [pokemon] }}>
+                                <PokeCard  key={pokemon.id} pokemonUrl={pokemon.url}/>
+                            </Link>
                 })
             }
         </main>

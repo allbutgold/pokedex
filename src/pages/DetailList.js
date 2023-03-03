@@ -1,11 +1,13 @@
 import Logo from "../components/logo/Logo.js"
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 import PokeDetails from "../components/pokeDetails/PokeDetails.js";
 
 const DetailList = () => {
+    let { state } = useLocation();
+
     const params = useParams();
-    const pokemons = params.pokemons
-    console.log("pokemons");
+    const pokemons = state.pokemons
+    console.log(pokemons);
     return ( 
         <div>
             <Logo/>

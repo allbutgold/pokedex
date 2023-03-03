@@ -10,7 +10,6 @@ const PokeCard = (props) => {
         fetch(props.pokemonUrl)
         .then(res => res.json())
         .then(data => {
-            console.log("pokemon Datas: ",data);
             setPokemon(data);
         })
     },[])

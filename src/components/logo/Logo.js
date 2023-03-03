@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom";
+import PokemonLogo from "../../image/Pokemon.png"
+
 const Logo = () => {
+
+
     return ( 
-        <h1>Logo</h1>
+        <Link to="/"><img src={PokemonLogo}></img></Link>
     );
 }
 

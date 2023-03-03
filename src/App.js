@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Menu" element={<Menu />} />
-          <Route path="/DetailList" element={<DetailList />} />
+          <Route path="/detaillist/:pokemons" element={<DetailList />} />
         </Routes>
       </BrowserRouter>
         <h1>pokedex</h1>

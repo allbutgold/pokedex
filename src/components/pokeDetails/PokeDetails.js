@@ -14,6 +14,7 @@ const PokeDetails = (props) => {
     },[])
     return ( 
         <div>
+            
             {
                 pokeDetails &&
                 <div>

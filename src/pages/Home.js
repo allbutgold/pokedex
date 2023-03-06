@@ -1,6 +1,7 @@
 //import library 
 import { useState, useEffect } from "react";
 import { useParams, Link  } from "react-router-dom";
+import uuid from 'react-uuid';
 
 
 // component import
@@ -12,14 +13,18 @@ import Burgermenu from "../image/Burgermenu.png"
 
 const Home = () => {
     const [pokeList, setPokeList] = useState([]);
+    const [filteredPokemons, setFilteredPokemons] = useState([]);
    
     useEffect(()=>{
         fetch("https://pokeapi.co/api/v2/pokemon/")
         .then(res => res.json())
         .then(data => {
+            //pokeList.push(...data.results);
             setPokeList(data.results)
+            //filteredPokemons.push(...data.results);
+            setFilteredPokemons(data.results)
             console.log(data.results);
-            console.log("pokeList:", pokeList);
+            console.log("pokeList:", pokeList, "filteredPokemons:", filteredPokemons);
         });
     },[])
 
@@ -33,10 +38,10 @@ const Home = () => {
             <Logo/>
             <Link to="/Menu"> <img src={Burgermenu}></img></Link>
             <BtnDarkMode />
-            <Searchbar />
-            {   pokeList.length > 0 &&
-                pokeList.map(pokemon=> {
-                    return  <Link to={"/Detaillist/"} state={{ pokemons: [{pokemon: pokemon}] }}>
+            <Searchbar pokemons={pokeList} setFilteredPokemons={setFilteredPokemons}/>
+            {   filteredPokemons.length > 0 &&
+                filteredPokemons.map(pokemon=> {
+                    return  <Link key={uuid()}  to={"/Detaillist/"} state={{ pokemons: [{pokemon: pokemon}] }}>
                                 <PokeCard  key={pokemon.id} pokemonUrl={pokemon.url}/>
                             </Link>
                 })

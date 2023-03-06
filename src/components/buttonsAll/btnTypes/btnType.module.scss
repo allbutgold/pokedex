@@ -1,0 +1,16 @@
+button {
+    width: 120px;
+    height: 35px;
+    margin: 20px;
+    border-radius: 10px;
+    .btnTypeActive {
+        background-color: green;
+        
+    }
+    .btnTypeNotActive {
+        background-color: red;
+    }
+}
+
+
+

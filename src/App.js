@@ -7,7 +7,7 @@ import Home from './pages/Home.js'
 import Menu from './pages/Menu.js'
 import DetailList from './pages/DetailList.js';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Menu" element={<Menu />} />
-          <Route path="/DetailList" element={<DetailList />} />
+          <Route path="/detaillist" element={<DetailList />} />
         </Routes>
       </BrowserRouter>
         <h1>pokedex</h1>

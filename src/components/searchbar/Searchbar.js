@@ -1,6 +1,8 @@
 const Searchbar = () => {
     return ( 
-        <h1>Searchbar</h1>
+        <form>
+            <input type="text" />
+        </form>
     );
 }
 

@@ -7,7 +7,7 @@ import Home from './pages/Home.js'
 import Menu from './pages/Menu.js'
 import DetailList from './pages/DetailList.js';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

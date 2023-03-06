@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  max-width: 350px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #CCDADD;
+}
+
+.logo {
+  width:225px;
+  margin: 50px 62.5px 50px 62.5px;
+}
+
+.home {
+  .header {
+    display: flex;
+    justify-content: space-between
+  }
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 20px 0 20px;
+  }
+}
+

@@ -30,4 +30,4 @@ const PokeDetails = (props) => {
     );
 }
 
-export default PokeDetails;
+export default PokeDetails; 

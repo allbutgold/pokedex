@@ -12,7 +12,7 @@ import Burgermenu from "../image/Burgermenu.png"
 
 const Home = () => {
     const [pokeList, setPokeList] = useState([]);
-   
+
     useEffect(()=>{
         fetch("https://pokeapi.co/api/v2/pokemon/")
         .then(res => res.json())
@@ -28,19 +28,24 @@ const Home = () => {
     }
 
     return ( 
-        <main>
-            
-            <Logo/>
-            <Link to="/Menu"> <img src={Burgermenu}></img></Link>
-            <BtnDarkMode />
-            <Searchbar />
-            {   pokeList.length > 0 &&
+        <main className="home">
+            <Logo />
+                <div className="header"> 
+                    <Link to="/Menu"> <img src={Burgermenu} ></img></Link>
+                    <Searchbar />
+                    <BtnDarkMode />
+                </div>
+                <div className="body">
+                { pokeList.length > 0 &&
                 pokeList.map(pokemon=> {
-                    return  <Link to={"/Detaillist/"} state={{ pokemons: [pokemon] }}>
+                    return  <Link to={"/Detaillist/"} state={{ pokemons: [pokemon] }} style={{ textDecoration: 'none' }}>
                                 <PokeCard  key={pokemon.id} pokemonUrl={pokemon.url}/>
                             </Link>
                 })
             }
+                </div>
+
+            
         </main>
 
     );

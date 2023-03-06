@@ -38,7 +38,7 @@ const Home = () => {
                 <div className="body">
                 { pokeList.length > 0 &&
                 pokeList.map(pokemon=> {
-                    return  <Link to={"/Detaillist/"} state={{ pokemons: [{pokemon: pokemon}] }}>
+                    return  <Link to={"/Detaillist/"} style={{ textDecoration: 'none' }} state={{ pokemons: [{pokemon: pokemon}] }}>
                                 <PokeCard  key={pokemon.id} pokemonUrl={pokemon.url}/>
                             </Link>
                 })

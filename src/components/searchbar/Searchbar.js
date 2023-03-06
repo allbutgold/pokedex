@@ -1,7 +1,10 @@
+import styles from '../searchbar/searchbar.module.scss';
+
+
 const Searchbar = () => {
     return ( 
-        <form>
-            <input type="text" />
+        <form className={styles.searchbar}>
+            <input type="text" placeholder='search' id="searchField"/>
         </form>
     );
 }

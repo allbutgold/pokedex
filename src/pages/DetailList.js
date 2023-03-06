@@ -6,11 +6,12 @@ const DetailList = () => {
     let { state } = useLocation();
 
     const params = useParams();
+
     console.log(state);
     const pokemons = state.pokemons
     console.log(pokemons);
     return ( 
-        <div>
+        <div className="detailList">
             <Logo/>
             {pokemons && pokemons.map((pokemon) => {
                     return (<PokeDetails pokemon={pokemon.pokemon}/>)

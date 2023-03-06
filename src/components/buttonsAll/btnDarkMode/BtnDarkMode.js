@@ -1,6 +1,6 @@
 const BtnDarkMode = () => {
     return ( 
-        <h1>BtnDarkMode</h1>
+        <h1>Btn</h1>
     );
 }
 

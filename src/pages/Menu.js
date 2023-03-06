@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import BtnType from "../components/buttonsAll/btnTypes/BtnType.js"
+import Logo from "../components/logo/Logo.js";
 
 import xButton from"../image/theX.png";
 
@@ -49,15 +50,19 @@ const Menu = () => {
     }
 
     return ( 
-        <section>
+        <section className="menu">
+            <div className="header">
+            <Logo/>
             <Link to={"/"}><img src={xButton} alt="" /></Link>
-            <h1>Menu</h1>
+            </div>
+            
+            <h1>Type</h1>
             {types && types.map(type => {
                 return (
                     <BtnType key={type.name} selectedTypeHandler={selectedTypeHandler} type={type}/>
                 )
             })}
-            <button onClick={searchTypesHandler}>
+            <button id='searchBtn' onClick={searchTypesHandler}>
                 search
             </button>
 

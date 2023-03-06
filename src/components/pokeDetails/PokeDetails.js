@@ -1,6 +1,8 @@
 import { useState, useEffect} from "react";
 import Logo from "../logo/Logo.js"
 
+import styles from '../pokeDetails/pokeDetails.module.scss'
+
 const PokeDetails = (props) => {
     const pokemon = props.pokemon;
     const [pokeDetails, setPokeDetails] = useState(null)
@@ -17,11 +19,16 @@ const PokeDetails = (props) => {
             
             {
                 pokeDetails &&
-                <div>
+                <div className={styles.pokeDetails}>
                     <img src={pokeDetails.sprites.front_default}/>
-                    <h1>{pokeDetails.name}</h1>
-                    <p>{pokeDetails.id}</p>
-                    {pokeDetails.types.map((element) => {return <p>{element.type.name}</p>})}
+                    <div className={styles.headline}>
+                        <h1>{pokeDetails.name}</h1>
+                        <p>{pokeDetails.id}</p>                    
+                    </div>
+                    <div className={styles.typeBox}>   
+                    {pokeDetails.types.map((element) => {return <p className={styles.type}>{element.type.name}</p>})}
+                    </div>
+                    
                 </div>    
             }
             
@@ -31,4 +38,4 @@ const PokeDetails = (props) => {
     );
 }
 
-export default PokeDetails;
+export default PokeDetails; 

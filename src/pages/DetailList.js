@@ -8,12 +8,13 @@ const DetailList = () => {
     let { state } = useLocation();
 
     const params = useParams();
+
     console.log(state);
     const pokemons = state.pokemons
     const[filteredPokemons, setFilteredPokemons]= useState(pokemons)
     console.log(pokemons);
     return ( 
-        <div>
+        <div className="detailList">
             <Logo/>
             <Searchbar pokemons={pokemons} setFilteredPokemons={setFilteredPokemons}/>
             {filteredPokemons && filteredPokemons.map((pokemon) => {

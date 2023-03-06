@@ -1,3 +1,4 @@
+import styles from '../searchbar/searchbar.module.scss';
 import { useState } from "react";
 
 
@@ -22,7 +23,10 @@ const Searchbar = (props) => {
     }
 
     return ( 
-        <input type="text" value={query} onChange={(e)=>{filterHandler(e)}}/>
+        <form className={styles.searchbar}>
+            <input type="text" value={query} placeholder='search' id="searchField" onChange={(e)=>{filterHandler(e)}}/>
+        </form>
+
     );
 }
 
